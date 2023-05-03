@@ -57,10 +57,10 @@ function App() {
             console.error(error);
           });
       };
-    
+      const userFirstName = localStorage.getItem('userFirstName');
       return (
         <div className="welcome-page">
-            <h1>Welcome</h1>
+            <h1>Welcome {userFirstName}</h1>
           <h2 className="mt-5">Notes</h2>
           <form onSubmit={handleNewNoteSubmit} className="form-wrapper mt-4">
             <input type="text" value={newNoteText} onChange={handleNewNoteChange} />

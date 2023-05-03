@@ -10,7 +10,7 @@ function LogIn(){
     async function loginUser(event) {
 		event.preventDefault()
        
-		const response = await fetch('http://localhost:5000/api/login', {
+		const response = await fetch('http://localhost:5000/api/signin', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -21,10 +21,12 @@ function LogIn(){
 			}),
 		})
         console.log("here");
-		const data = await response.json()
+		const data = await response.json();
 
 		if (data.user) {
-			localStorage.setItem('token', data.user)
+            const user = JSON.parse(atob(data.user.split('.')[1]))
+            localStorage.setItem('token', data.user)
+            localStorage.setItem('userFirstName', user.firstName) 
 			alert('Login successful')
 			window.location.href = '/'
 		} else {

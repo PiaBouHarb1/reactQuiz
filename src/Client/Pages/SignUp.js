@@ -32,7 +32,7 @@ function SignUp(){
 
 		if (data.status === 'ok') {
 			console.log('ok');
-            window.location.href = '/login'
+            window.location.href = '/signin'
 		}
     }
  

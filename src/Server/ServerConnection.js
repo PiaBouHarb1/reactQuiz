@@ -40,13 +40,13 @@ mongoose.connect(uri, {
     }
   })
   
-  app.post('/api/login', async (req, res) => {
+  app.post('/api/signin', async (req, res) => {
     const user = await User.findOne({
       email: req.body.email,
     })
   
     if (!user) {
-      return { status: 'error', error: 'Invalid login' }
+      return res.json({ status: 'error', error: 'Invalid login' })
     }
   
     const isPasswordValid = await bcrypt.compare(
@@ -68,7 +68,8 @@ mongoose.connect(uri, {
     } else {
       return res.json({ status: 'error', user: false })
     }
-  });
+  })
+  
   
 const noteSchema = new mongoose.Schema({
   text: String,
