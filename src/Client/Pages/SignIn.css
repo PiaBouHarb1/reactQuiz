@@ -1,0 +1,33 @@
+input{
+    padding: 8px 16px;
+    min-width: 300px;
+    border-radius: 24px;
+}
+form{
+    max-width: 450px;
+    display: block;
+    margin: 0 auto;
+    text-align: left;
+}
+.Button {
+    margin: 0 auto;
+    min-width: 200px;
+}
+.sign-up-wrapper {
+    display: flex;
+    align-items: center; justify-content: center;
+}
+.sign-up-wrapper a{
+    margin-left: 32px;
+}
+.sign-up-wrapper p{
+    margin-left: 0;
+}
+.form-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-wrapper .Button {
+    margin-left: 24px;
+}
